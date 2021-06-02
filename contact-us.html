@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Shop | Modern Shop</title>
+		<title>Contact us | Modern Shop</title>
 		<meta name="description" content="Men Clothing store made for web programing semester project.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="./assets/styles/main.css">
@@ -45,12 +45,34 @@
 	<header class="shop_header">
 		<div class="container flex align-center justify-between">
 			<div class="shop_header_content">
-				<h1>Our Shop</h1>
+				<h1>We love to hear your feedback</h1>
 			</div>
 		</div>		
 	</header>
 
-	<div class="row container" id="shop_items"></div>
+	<section class="container flex">
+		<section class="about p-60 text-white" style="width: 100%;">
+			<img src="./assets/images/send.svg" alt="">
+			</section>
+		<section class="mission" style="width: 100%;">
+				<h1 class="after-primary contact title">Get in touch</h1>
+				<form action="" id="contact_form">
+					<div class="error" id="first_name_err"></div>
+					<input type="text" name="first_name" id="first_name" placeholder="First name">
+
+					<div class="error" id="sur_name_err"></div>
+					<input type="text" name="sur_name" id="sur_name" placeholder="Surname name">
+					
+					<div class="error" id="email_err"></div>
+					<input type="email" name="email" id="email" placeholder="Your email address" />
+					
+					<div class="error" id="comments_err"></div>
+					<textarea name="comments" id="comments" placeholder="Additional comments" rows="10"></textarea>
+
+					<button class="button button-primary bg-primary text-white pointer">Send</button>
+				</form>
+		</section>
+	</section>
 
 	</body>
 </html>

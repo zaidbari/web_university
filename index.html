@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Modern Shop</title>
+		<title>Home | Modern Shop</title>
 		<meta name="description" content="Men Clothing store made for web programing semester project.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="./assets/styles/main.css">
@@ -15,23 +15,27 @@
 		
 
 		<!-- Navbar starts here -->
-		<nav class="navbar">
+		<nav class="navbar transparent" id="nav_home">
 			<div class="container flex align-center justify-between">
-				<a href="/"><img class="logo" src="./assets/images/logo.svg" /></a>
+				<a href="/"><img class="logo" id="brand_logo" src="./assets/images/logo-white.svg" /></a>
 				<ul class="navbar_items">
 					<li class="navbar_link"><a href="/">Home</a></li>
 					<li class="navbar_link"><a href="./shop.html">Shop</a></li>
-					<li class="navbar_link"><a href="/">Contact us</a></li>
+					<li class="navbar_link"><a href="./contact-us.html">Contact us</a></li>
 				</ul>
 				<div class="navbar_brand">
 					<a href="https://facebook.com/itszbari" target="_blank" rel="noopener noreferrer">
-						<img src="./assets/images/fb.svg" class="icon" alt="Facebook Logo">
+						<img src="./assets/images/fb-white.svg" id="fb_icon" class="icon" alt="Facebook Logo">
 					</a>
 					<a href="https://instagram.com/its_zbari" target="_blank" rel="noopener noreferrer">
-						<img src="./assets/images/insta.svg" class="icon" alt="Instagram Logo">
+						<img src="./assets/images/insta-white.svg" id="insta_icon" class="icon" alt="Instagram Logo">
 					</a>
 					<a href="https://twitter.com/itszbari" target="_blank" rel="noopener noreferrer">
-						<img src="./assets/images/twitter.svg" class="icon" alt="Twitter Logo">
+						<img src="./assets/images/twitter-white.svg" id="twitter_icon" class="icon" alt="Twitter Logo">
+					</a>
+					<a href="./order.html" class="por">
+						<img src="./assets/images/cart-white.svg" class="icon" id="cart_icon" alt="Cart icon">
+						<span id="cart_badge">0</span>
 					</a>
 				</div>
 			</div>
@@ -41,12 +45,51 @@
 	<header class="home_header">
 		<div class="container flex align-center justify-between">
 			<div class="home_header_content">
-				<h1>Full Set Of Great Features To Make You Look Fresh</h1>
-				<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quibusdam assumenda dolor dignissimos veniam amet in est provident unde animi, eaque quia, sequi iure similique iusto! A, similique? Illum, assumenda!</p>
-				<a href="/" class="button button-outline-light">Browse Shop</a>
+				<h1>Full Set Of Great Features To Make You <span class="text-primary"> Look Fresh</span></h1>
+				<a href="./shop.html" class="button button-primary mr-20">Browse our shop</a>
+				<a href="./shop.html" class="button button-outline-light">Contact us</a>
 			</div>
 		</div>		
 	</header>
 
+	<main>
+		<section class="container flex">
+			<section class="about bg-primary text-white">
+					<h1 class="after-white title">About us</h1>
+					<p class="lead">
+						Modern Shop is the leading online marketplace in South Asia, empowering tens of thousands of sellers to connect with millions of customers. Daraz provides immediate and easy access to 20+ million products in 100+ categories. Modern Shop is a mall, a marketplace and a community for its customers. It is also a university for entrepreneurs, and every month it educates more than 2,000 new sellers on e-commerce operations. As part of the Alibaba ecosystem, Modern Shop is leveraging Alibaba’s global leadership and experience in technology, online commerce, mobile payments and logistics to drive growth in its markets.
+					</p>
+				</section>
+			<section class="mission">
+					<h1 class="after-primary title">Our Mission</h1>
+					<p class="lead">
+						Mordern Shop's mission is to make it easy to do business anywhere.
+						We provide the fundamental technology infrastructure and marketing reach to help merchants, brands and other businesses that provide products, services and digital content to leverage the power of the Internet to engage with their users and customers. Our businesses are comprised of core commerce, cloud computing, digital media and entertainment, innovation initiatives and others. Through investee affiliates, we also participate in the logistics and local services sectors.
+					</p>
+			</section>
+		</section>
+		<section class="bg-dark text-white text-center py-60">
+			<div class="container">
+				<div class="flex mt-20 justify-between align-center">
+					<div>
+						<h2 class="l-0">100+</h2>
+						<p class="lead text-primary uppercase">Customers Satisfied</p>
+					</div>
+					<div>
+						<h2 class="l-0">950+</h2>
+						<p class="lead text-primary uppercase">Items Sold</p>
+					</div>
+					<div>
+						<h2 class="l-0">10+</h2>
+						<p class="lead text-primary uppercase">Years open</p>
+					</div>
+					<div>
+						<h2 class="l-0">0</h2>
+						<p class="lead text-primary uppercase">Complains</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		</main>
 	</body>
 </html>
