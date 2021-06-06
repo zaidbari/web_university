@@ -194,7 +194,7 @@ if (document.getElementById("order_items")) {
 						<label for="size_${ e.id }_${ index }" class="pointer radio"><b>Size:</b> ${ p.size } - <b>Price:</b> ${ p.price }</label><br>
 					`)
 		).join('') }
-		<div id="price_err_${ e.id }" style="color: red"></div>
+		<div id="price_err_${ e.id }" class="error"></div>
 			</td>
 			<td>
 				<select name="item_${ e.id }_quantity" id="quantity_${ e.id }">
@@ -205,7 +205,7 @@ if (document.getElementById("order_items")) {
 					<option value="4">4 items</option>
 					<option value="5">5 items</option>
 				</select>
-				<div id="quantity_err_${ e.id }" style="color: red"></div>
+				<div id="quantity_err_${ e.id }" class="error"></div>
 			</td>
 			<td id="cost_${ e.id }"></td>
 		`
@@ -268,9 +268,7 @@ if (document.getElementById("order_items")) {
 
 		}
 	})
-
 }
-
 
 // cart functionality
 let cartBadge = document.querySelector('#cart_badge')
@@ -288,10 +286,8 @@ addCart = (e) => {
 		localStorage.setItem("cart_number", JSON.stringify(prevCart.filter(i => i !== e)))
 		document.querySelector(`#cart_button_${ e }`).innerText = "Add to cart"
 		cartBadge.innerText = --prevCart.length
-
 	}
 }
-
 
 confirmation = (e) => {
 	localStorage.setItem("cart_number", "[]")
@@ -305,29 +301,21 @@ confirmation = (e) => {
 if (document.querySelector("#nav_home")) window.onscroll = () => scrollFunction()
 
 function scrollFunction () {
-	console.log(document.body.scrollTop)
+	var icons = [ 'fb', 'insta', 'twitter', 'cart', 'logo' ]
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
 		document.querySelector("#nav_home").classList.remove('transparent')
-		document.querySelector("#fb_icon").src = "./assets/images/fb.svg"
-		document.querySelector("#insta_icon").src = "./assets/images/insta.svg"
-		document.querySelector("#twitter_icon").src = "./assets/images/twitter.svg"
-		document.querySelector("#cart_icon").src = "./assets/images/cart.svg"
-		document.querySelector("#brand_logo").src = "./assets/images/logo.svg"
-
+		icons.forEach(e => {
+			document.querySelector(`#${ e }_icon`).src = `./assets/images/${ e }.svg`
+		})
 	} else {
 		document.querySelector("#nav_home").classList.add('transparent')
-		document.querySelector("#fb_icon").src = "./assets/images/fb-white.svg"
-		document.querySelector("#insta_icon").src = "./assets/images/insta-white.svg"
-		document.querySelector("#twitter_icon").src = "./assets/images/twitter-white.svg"
-		document.querySelector("#cart_icon").src = "./assets/images/cart-white.svg"
-		document.querySelector("#brand_logo").src = "./assets/images/logo-white.svg"
+		icons.forEach(e => {
+			document.querySelector(`#${ e }_icon`).src = `./assets/images/${ e }-white.svg`
+		})
 	}
 }
 
-function removeClass (el, c) {
-	if (el) el.classList.remove(c)
-}
-
+removeClass = (el, c) => el && el.classList.remove(c)
 
 if (document.getElementById('contact_form'))
 	document.getElementById('contact_form').addEventListener('submit', e => {
@@ -359,12 +347,10 @@ if (document.getElementById('contact_form'))
 			f_n_err.innerText = ""
 			f_n.classList.add('border-success')
 		}
-
 		if (s_n.value == "") {
 			s_n_err.innerText = "Sur name is required"
 			s_n.classList.add('border-danger')
 			err = true
-
 		} else {
 			s_n_err.innerText = ""
 			s_n.classList.add('border-success')
@@ -383,7 +369,6 @@ if (document.getElementById('contact_form'))
 			c_err.innerText = "Comments are required"
 			c.classList.add('border-danger')
 			err = true
-
 		} else {
 			c_err.innerText = ""
 			c.classList.add('border-success')
@@ -393,6 +378,5 @@ if (document.getElementById('contact_form'))
 			alert("Your response has been recieved. Thankyou")
 			location.reload()
 		}
-
 
 	})
